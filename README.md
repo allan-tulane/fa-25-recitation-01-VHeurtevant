@@ -1,7 +1,7 @@
 # CMPS 2200  Recitation 01
 
-**Name (Team Member 1):**_________________________  
-**Name (Team Member 2):**_________________________
+**Name (Team Member 1):**Viv Heurtevant vheurtevant@tulane.edu
+
 
 In this recitation, we will investigate asymptotic complexity. Additionally, we will get familiar with the various technologies we'll use for collaborative coding.
 
@@ -39,11 +39,12 @@ We'll compare the running times of `linear_search` and `binary_search` empirical
 
 - [ ] 4. Describe the worst case input value of `key` for `linear_search`? for `binary_search`? 
 
-**TODO: your answer goes here**
+The worst case input value of linear search and binary search both occur when key is not in the list. Ignoring this trivial case, however, the worst case when the key is in the list for linear search is when key is at the last index, and for binary search the worst is when key is at either the first or last index.
 
 - [ ] 5. Describe the best case input value of `key` for `linear_search`? for `binary_search`? 
+The best case of key for linear search is when it is at the first index. For binary search, the best case is when the key is the midpoint element of the list. 
 
-**TODO: your answer goes here**
+
 
 - [ ] 6. Complete the `time_search` function to compute the running time of a search function. Note that this is an example of a "higher order" function, since one of its parameters is another function.
 
@@ -51,13 +52,16 @@ We'll compare the running times of `linear_search` and `binary_search` empirical
 
 - [ ] 8. Call `print_results(compare_search())` and paste the results here:
 
-**TODO: add your timing results here**
+|   n |   linear |   binary |
+|-----|----------|----------|
+|  10 |    0.003 |    0.005 |
+| 100 |    0.005 |    0.002 |
 
 - [ ] 9. The theoretical worst-case running time of linear search is $O(n)$ and binary search is $O(log_2(n))$. Do these theoretical running times match your empirical results? Why or why not?
 
-**TODO: your answer goes here**
+The results are more accurate to the theoretical times for a larger sample size n. This is because when n is small it is possible that some O(n) function may be faster than an O(log(n) function). For example, 3n >= n^2 when n <= 3, but for all n>3 3n < n^2. 
 
 - [ ] 10. Binary search assumes the input list is already sorted. Assume it takes $\Theta(n^2)$ time to sort a list of length $n$. Suppose you know ahead of time that you will search the same list $k$ times. 
-  + What is worst-case complexity of searching a list of $n$ elements $k$ times using linear search? **TODO: your answer goes here**
-  + For binary search? **TODO: your answer goes here**
-  + For what values of $k$ is it more efficient to first sort and then use binary search versus just using linear search without sorting? **TODO: your answer goes here**
+  + What is worst-case complexity of searching a list of $n$ elements $k$ times using linear search? n^k if each search k is a worst case.
+  + For binary search? n^2 + log_2^k(n), where it is assumed the list only need be sorted once.
+  + For what values of $k$ is it more efficient to first sort and then use binary search versus just using linear search without sorting? Linear search is superior for k < 3. For k >= 3, binary search is more efficient.
