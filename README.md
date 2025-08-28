@@ -41,7 +41,8 @@ We'll compare the running times of `linear_search` and `binary_search` empirical
 
 The worst case input value of linear search and binary search both occur when key is not in the list. Ignoring this trivial case, however, the worst case when the key is in the list for linear search is when key is at the last index, and for binary search the worst is when key is at either the first or last index.
 
-- [ ] 5. Describe the best case input value of `key` for `linear_search`? for `binary_search`? 
+- [ ] 5. Describe the best case input value of `key` for `linear_search`? for `binary_search`?
+      
 The best case of key for linear search is when it is at the first index. For binary search, the best case is when the key is the midpoint element of the list. 
 
 
